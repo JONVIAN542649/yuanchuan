@@ -904,7 +904,9 @@ class TransferManager extends ChangeNotifier {
       // 续传时先读已有分块再打开写句柄，避免同文件双开冲突。
       final hashSink = AccumulatorSink<Digest>();
       final hashInput = sha256.startChunkedConversion(hashSink);
-      final partFile = part as File;
+      // part 在上方已创建；此处仅用于通过可空分析。
+      final partFile = part;
+      if (partFile == null) return;
       if (offset > 0 && await partFile.exists()) {
         await for (final prior in partFile.openRead(0, offset)) {
           hashInput.add(prior);
