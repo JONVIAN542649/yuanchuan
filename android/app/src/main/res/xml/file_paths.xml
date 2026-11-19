@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 接收目录：Download/YuanChuan -->
+    <external-path name="yuanchuan_downloads" path="Download/YuanChuan/" />
+    <!-- 应用专属目录（发送缓存等） -->
+    <files-path name="app_files" path="." />
+    <cache-path name="app_cache" path="." />
+    <external-files-path name="app_external_files" path="." />
+</paths>
